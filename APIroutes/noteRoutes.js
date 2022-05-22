@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const fs = require('fs');
 const path = require('path');
-const { filterByQuery, findById, createNewNote, validateNote, deleteById } = require('../../lib/notes');
-const notes = require('../../db/db.json');
-const noteIds = require('../../db/noteIds.json');
+const { filterByQuery, findById, createNewNote, validateNote, deleteById } = require('/lib/notes');
+const notes = require('Develop/db/db.json');
+const noteIds = require('Develop/db/noteIds.json');
 
 console.log(noteIds.id);
 
@@ -31,7 +31,7 @@ router.get('/note/:id', (req, res) => {
 router.post('/notes', (req, res) => {
     noteIds.id += 1;
     fs.writeFileSync(
-        path.join(__dirname, '../../db/noteIds.json'),
+        path.join(__dirname, 'Develop/db/noteIds.json'),
         JSON.stringify(noteIds, null, 2)
     );
     req.body.id = noteIds.id.toString();
