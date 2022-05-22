@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const fs = require('fs');
 const path = require('path');
-const { filterByQuery, findById, createNewNote, validateNote, deleteById } = require('/lib/notes');
+const { filterByQuery, findById, createNewNote, validateNote, deleteById } = require('lib/notes');
 const notes = require('Develop/db/db.json');
 const noteIds = require('Develop/db/noteIds.json');
 
