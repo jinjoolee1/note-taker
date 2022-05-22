@@ -43,3 +43,14 @@ router.post('/notes', (req, res) => {
     }
 });
 
+// DELETE note
+router.delete('/note/:id', (req, res) => {
+    const result = deleteById(req.params.id, notes);
+    if (result) {
+        res.json(result);
+    } else {
+        res.send(404);
+    }
+});
+
+module.exports = router;
